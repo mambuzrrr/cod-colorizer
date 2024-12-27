@@ -43,14 +43,24 @@
         
         h4 {
             font: 100 1.5em var(--font);
-            padding-top: 0.35em;
             margin: 0.5em;
             color: white;
         }
         
+        @-moz-document url-prefix() {
+            h4 {
+                padding-top: 0.35em;
+            }
+        }
+        
         h6 {
             font: 100 1em var(--font);
-            padding-top: 0.5em;
+        }
+        
+        @-moz-document url-prefix() {
+            h6 {
+                padding-top: 0.5em;
+            }
         }
         
         a {
