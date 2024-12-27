@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAp9JREFUeNpsk8tPU1EQh6fl3t62t22svYBACxS4BMJD5CGiKErUILohkYUkJi7QlRhNSFixMK7UlS5cuNSVif8BiYpoFEFAEKtVKBShpbwqUPqC1hkyJPVxky85Z87M78zMmauBfz8B2YfYkQNIEvEh80gQ2Ul1TvuPgIRkIQfLVculKqdUOuWL/sI9EUK2U521fwVrED2SjqhWi1hT7jQ04rqYbXr2+SNdHR/oeZ2BFCJFmTa9oyxfJD8VmUW2kCUkhkQIErBxrQpiYYHijP1SmdGQJtosApTm6stc3sgy2o1IAFlHaO8XuN4qpJTXVhJz2mV1L82mSrOKAnEuZY2b6kLGSMBy4Wzd6dYzNRe9P73iWjC4G5RMJiC67odoPAGeQNh08pDxMNnTFTOUqFnx18P+5/0f/NP0CunuqQWYmVuFnq5ruSca6gX8YHMrBLHtBEx+84GgN0DT0WLovHwMaqsLI/cfj/QNTwT6MdZDHXVwk2qRuts9V091dbbb5hZXYH1jFCueAIczCyTZBI+ejKzcefDmJfoNIcPId8qAagvzwMiv3o6YJnxB+/ySR9PRGgOzXA4/Bvvgyyd3ouvu6Bj6fGQB6sGKlp+DurqKbCgZiqTYZO2NDmm3FxalCHJKWiDTKmorCoxk3GBfioloUyaSDk35akFOZ5sOJGE7cav33eLN3meLZvvxBAmdP2LNIR+eF4pNCiwg8iBJV9odVpNuc6u57cWQyx3E4fkKA4PjeU8fdtc1VMziE8/r+DKK0Qg8mlR/rKkxTxJ3ApPVzQPvcT+DLJC6yz2TXdty/fO97nP1lQXyzvh0KMYxu8EaTisbcfIghTl4mTNUeMgMXL+Hhym0J0DpyIiZ64tys8IsYOBLpJQz+i/ivwUYAKMM0lh2/5MLAAAAAElFTkSuQmCC">
+    <title>cod-colorizer</title>
+    <style>
+        :root {
+            --font: 'Courier', monospace;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        *+* {
+            margin: 1em 0 auto;
+        }
+        
+        body {
+            color: #392F13;
+            background-color: #534F47;
+        }
+        
+        @media(min-width: 35em) {
+            .col {
+                display: table-cell;
+            }
+            .row {
+                display: table;
+            }
+        }
+        
+        .row {
+            width: 100%;
+        }
+        
+        .container {
+            max-width: 40em;
+            padding: 1em;
+            margin: auto;
+            font: 1em/1.6 var(--font);
+        }
+        
+        h4 {
+            font: 100 1.5em var(--font);
+            padding-top: 0.35em;
+            margin: 0.5em;
+            color: white;
+        }
+        
+        h6 {
+            font: 100 1em var(--font);
+            padding-top: 0.5em;
+        }
+        
+        a {
+            color: #4a4438;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        
+        a:hover {
+            color: black;
+        }
+        
+        .box-main .row, .box-color .row {
+            text-align: center;
+            font-size: 0.8em;
+        }
+        
+        .box-main .col {
+            background: #6F6A60;
+            padding: 1em;
+        }
+        
+        .box-color .col {
+            background: #6F6A60;
+            padding: 0 0;
+        }
+        
+        .box-color h4 {
+            font-weight: bold;
+        }
+        
+        .box-color h4:empty {
+            display: none;
+        }
+        
+        .btn {
+            padding: 1em;
+            text-transform: uppercase;
+            background: white;
+            font: 0.7em var(--font);
+        }
+        
+        
+        input[class^="btn-"] {
+            background: #595445;
+            border: solid 1px #554F3F;
+            display: inline-flex;
+            align-items: center;
+            border-radius: 0.15em;
+            padding: 0.25em 0.5em;
+            font-weight: 200;
+            text-transform: uppercase;
+            font-family: var(--font);
+            height: 1.5em;
+        }
+        
+        .btn-color:hover, .btn-copy:hover {
+            background: #4f493b;
+            border: solid 1px #484336;
+        }
+        
+        .btn-green {
+            color: white !important;
+            background: green !important;
+        }
+        
+        #input1 {
+            background: #4f4b4070;
+            padding: 0.5em;
+            color: #392d1a;
+            border: solid 1px #554F3F;
+            width: 100%;
+        }
+        
+        input:focus {
+            outline: none; /* solid 1px #484336; */
+        }
+        
+        .q3-0, .btn-0 {
+            color: black;
+        }
+        
+        .q3-1, .btn-1 {
+            color: red;
+        }
+        
+        .q3-2, .btn-2 {
+            color: lime;
+        }
+        
+        .q3-3, .btn-3 {
+            color: yellow;
+        }
+        
+        .q3-4, .btn-4 {
+            color: blue;
+        }
+        
+        .q3-5, .btn-5 {
+            color: cyan;
+        }
+        
+        .q3-6, .btn-6 {
+            color: magenta;
+        }
+        
+        .q3-7, .btn-7 {
+            color: white;
+        }
+        
+        .q3-8, .btn-8 {
+            color: purple;
+        }
+        
+        .q3-9, .btn-9 {
+            color: grey;
+        }
+    </style>
+</head>
+<body class="container">
+    <div class="box-main">
+        <div class="row">
+            <div class="12 col">
+                <h6><a href="https://github.com/spacegears/cod-colorizer" target="_blank">cod-colorizer by spacegears</a></h6>
+            </div>
+        </div>
+    </div>
+    <div class="box-main">
+        <div class="row">
+            <div class="12 col">
+                <input type="text" id="input1" placeholder="^0Example^5Player^6Name" autofocus>
+                <input type="button" class="btn-0 btn-color" value="^0" title="Black">
+                <input type="button" class="btn-1 btn-color" value="^1" title="Red">
+                <input type="button" class="btn-2 btn-color" value="^2" title="Green">
+                <input type="button" class="btn-3 btn-color" value="^3" title="Yellow">
+                <input type="button" class="btn-4 btn-color" value="^4" title="Blue">
+                <input type="button" class="btn-5 btn-color" value="^5" title="Cyan">
+                <input type="button" class="btn-6 btn-color" value="^6" title="Magenta">
+                <input type="button" class="btn-7 btn-color" value="^7" title="White">
+                <input type="button" class="btn-8 btn-color" value="^8" title="* Special, changes color depending on map and current team (CoD:UO only)&#010;American = Dark Green&#010;Russian = Dark Red / Maroon&#010;British = Dark Blue&#010;Custom maps = Purple (?)">
+                <input type="button" class="btn-9 btn-color" value="^9" title="Grey">
+                <input type="button" class="btn-9 btn-copy" value="COPY" id="copy" title="Copy to clipboard" onclick="copyText(event)">
+            </div>
+        </div>
+    </div>
+    <div class="box-color">
+        <div class="row">
+            <div class="12 col">
+                 <h4 id="colored"></h4>
+            </div>
+        </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script>
+        input1.addEventListener("input", function (e) {
+            var str = document.getElementById("input1").value;
+            var strip = /\^\^[0-9]([0-9])/g;
+            var regex = /\^([0-9])([^\^]+)/g;
+            var prepared = str.replace(strip, "^$1");
+            /* document.getElementById("colored").innerHTML = str.replace(regex, "<span class='q3-$1'>$2</span>"); --- It works but only with single tag */
+            document.getElementById("colored").innerHTML = prepared.replace(regex, "<span class='q3-$1'>$2</span>");
+        });
+
+        $('.btn-color').on('click', function(){
+            var cursorPos = $('#input1').prop('selectionStart');
+            var v = $('#input1').val();
+            var textBefore = v.substring(0, cursorPos );
+            var textAfter  = v.substring(cursorPos, v.length);
+            $('#input1').val(textBefore + $(this).val() + textAfter);
+            $('#input1').focusTextToEnd();
+        });
+
+        /* https://stackoverflow.com/a/24635747 */
+        (function($){
+            $.fn.focusTextToEnd = function(){
+                this.focus();
+                var $thisVal = this.val();
+                this.val('').val($thisVal);
+                return this;
+            }
+        }(jQuery));
+
+        /* https://codepen.io/clement-gaudiniere/pen/bGaKjJY */
+        var input = document.getElementById("input1");
+    
+        copyText = (e) => {
+            if (input.value.length) {
+                navigator.clipboard.writeText(input.value).then(() => {
+                    document.getElementById("copy").classList.add("btn-green");
+                    setTimeout(() => {
+                        document.getElementById("copy").classList.remove("btn-green");
+                    }, 700);
+                })
+            } 
+        }
+    </script>
+</body>
