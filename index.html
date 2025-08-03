@@ -145,45 +145,46 @@
         input:focus {
             outline: none; /* solid 1px #484336; */
         }
-
+        
+        /* I have some better colorcodes, which are similiar to CoD */
         .q3-0,.btn-0 {
             color: black;
         }
 
         .q3-1, .btn-1 {
-            color: red;
+            color: #F81123; /* red */
         }
 
         .q3-2, .btn-2 {
-            color: lime;
+            color: #007800; /* green */
         }
 
         .q3-3, .btn-3 {
-            color: yellow;
+            color: #FFCC00; /* yellow */
         }
 
         .q3-4,.btn-4 {
-            color: blue;
+            color: #0D6EFD; /* blue */
         }
 
         .q3-5, .btn-5 {
-            color: cyan;
+            color: #00CCFF; /* cyan */
         }
 
         .q3-6, .btn-6 {
-            color: magenta;
+            color: #FF00FF; /* magenta/purple */
         }
 
         .q3-7, .btn-7 {
-            color: white;
+            color: white; /* Standard White */
         }
 
         .q3-8, .btn-8 {
-            color: purple;
+            color: purple; /* Team Colors, eg. Allies Green, Axis Grey, British Dark blue, Russian Dark red */
         }
 
         .q3-9, .btn-9 {
-            color: grey;
+            color: grey; /* Grey */
         }
     </style>
 </head>
@@ -209,7 +210,7 @@
                 <input type="button" class="btn-5 btn-color" value="^5" title="Cyan"/>
                 <input type="button" class="btn-6 btn-color" value="^6" title="Magenta"/>
                 <input type="button" class="btn-7 btn-color" value="^7" title="White"/>
-                <input type="button" class="btn-8 btn-color" value="^8" title="* Special, changes color depending on map and current team (CoD:UO only)&#010;American = Dark Green&#010;Russian = Dark Red / Maroon&#010;British = Dark Blue&#010;Custom maps = Purple (?)"/>
+                <input type="button" class="btn-8 btn-color" value="^8" title="* Special, changes color depending on map and current team (CoD:UO only)&#010;American = Dark Green&#010;Russian = Dark Red / Maroon&#010;British = Dark Blue&#010;Custom maps = Purple (?)"/> <!-- works on CoD 1 1.4/1.5 & CoD2 same -->
                 <input type="button" class="btn-9 btn-color" value="^9" title="Grey"/>
                 <input type="button" class="btn-9 btn-copy" value="COPY" id="copy" title="Copy to clipboard" onclick="copyText(event)"/>
             </div>
